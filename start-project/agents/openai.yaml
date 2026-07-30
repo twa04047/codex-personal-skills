@@ -1,4 +1,4 @@
 interface:
   display_name: "Start Project"
-  short_description: "빈 폴더에 최소 spec 기반 개발 구조 생성"
-  default_prompt: "Use $start-project to design and scaffold a minimal project architecture for my app idea."
+  short_description: "개발 가이드·번호형 spec 기반 프로젝트 생성"
+  default_prompt: "Use $start-project to create a beginner-friendly project with a development guide, concise agent instructions, and numbered specs."
