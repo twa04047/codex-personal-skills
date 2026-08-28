@@ -1,0 +1,4 @@
+interface:
+  display_name: "Obsidian Daily"
+  short_description: "지정 시간의 Codex 활동을 Obsidian Daily로 요약"
+  default_prompt: "Use $obsidian-daily to summarize my Codex activity from <start time> to <end time> into today's Obsidian Daily note."

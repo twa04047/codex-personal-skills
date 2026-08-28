@@ -1,0 +1,4 @@
+interface:
+  display_name: "Obsidian Docs"
+  short_description: "대화의 핵심 내용을 Vault 문서와 데일리 노트로 연결"
+  default_prompt: "Use $obsidian-docs to summarize the important content from this chat into my Obsidian Vault and link it to today’s daily note."

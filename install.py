@@ -9,7 +9,7 @@ import shutil
 from pathlib import Path
 
 
-SKILL_NAME = "start-project"
+SKILL_NAMES = ("start-project", "obsidian-daily", "obsidian-docs")
 
 
 def default_skills_dir() -> Path:
@@ -21,28 +21,40 @@ def default_skills_dir() -> Path:
     )
 
 
-def install(skills_dir: Path, *, copy: bool) -> Path:
-    source = Path(__file__).resolve().parent / SKILL_NAME
-    target = skills_dir.expanduser().resolve() / SKILL_NAME
-    if not source.is_dir():
-        raise FileNotFoundError(f"스킬 원본이 없습니다: {source}")
+def install(skills_dir: Path, *, copy: bool) -> list[Path]:
+    repository = Path(__file__).resolve().parent
+    resolved_skills_dir = skills_dir.expanduser().resolve()
+    planned: list[tuple[str, Path, Path]] = []
+    installed: list[Path] = []
 
-    skills_dir.mkdir(parents=True, exist_ok=True)
-    if target.is_symlink() and target.resolve() == source.resolve():
-        print(f"이미 연결되어 있습니다: {target}")
-        return target
-    if target.exists() or target.is_symlink():
-        raise FileExistsError(
-            f"기존 설치본이 있습니다: {target}\n"
-            "내용을 확인하고 직접 제거한 뒤 다시 실행하세요."
-        )
+    for skill_name in SKILL_NAMES:
+        source = repository / skill_name
+        target = resolved_skills_dir / skill_name
+        if not source.is_dir():
+            raise FileNotFoundError(f"스킬 원본이 없습니다: {source}")
+        if target.is_symlink() and target.resolve() == source.resolve():
+            installed.append(target)
+            continue
+        if target.exists() or target.is_symlink():
+            raise FileExistsError(
+                f"기존 설치본이 있습니다: {target}\n"
+                "내용을 확인하고 직접 제거한 뒤 다시 실행하세요."
+            )
+        planned.append((skill_name, source, target))
 
-    if copy:
-        shutil.copytree(source, target)
-    else:
-        target.symlink_to(source, target_is_directory=True)
-    print(f"{SKILL_NAME} 설치 완료: {target}")
-    return target
+    resolved_skills_dir.mkdir(parents=True, exist_ok=True)
+    for skill_name, source, target in planned:
+        if copy:
+            shutil.copytree(source, target)
+        else:
+            target.symlink_to(source, target_is_directory=True)
+        installed.append(target)
+        print(f"{skill_name} 설치 완료: {target}")
+
+    for target in installed:
+        if target not in {item[2] for item in planned}:
+            print(f"이미 연결되어 있습니다: {target}")
+    return installed
 
 
 def main() -> int:
