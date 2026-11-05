@@ -9,7 +9,7 @@ import shutil
 from pathlib import Path
 
 
-SKILL_NAMES = ("start-project", "obsidian-daily", "obsidian-docs")
+SKILL_NAMES = ("start-project", "cofa-sprint", "obsidian-daily", "obsidian-docs")
 
 
 def default_skills_dir() -> Path:

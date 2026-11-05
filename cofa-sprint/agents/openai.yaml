@@ -1,0 +1,4 @@
+interface:
+  display_name: "COFA 빠른 스펙 개발"
+  short_description: "필수 결과 중심의 짧은 명세, 병렬 작업 판단과 실제 검증 루프"
+  default_prompt: "$cofa-sprint 준비: README의 필수 범위와 핵심 문제풀이 시간을 기준으로 개발 지도를 만들어줘."
