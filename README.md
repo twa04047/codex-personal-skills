@@ -7,8 +7,8 @@
 
 - `start-project`: 짧은 제품 아이디어에서 spec 중심의 최소 프로젝트 구조와
   프로젝트별 `AGENTS.md`를 생성합니다.
-- `cofa-sprint`: 기존 과제의 README와 시간 제한을 기준으로 준비, 짧은 명세,
-  구현·검증, 핵심 결과 점검을 진행합니다.
+- `cofa-sprint`: 기존 과제의 README와 시간 제한을 기준으로 개발 지도와 상세
+  명세를 작성하고, 구현·검증과 핵심 결과 점검을 진행합니다.
 - `obsidian-daily`: 사용자가 지정한 시간 범위의 Codex·ChatGPT 활동을
   Obsidian Daily 노트에 요약하고 완료 상태로 표시합니다.
 - `obsidian-docs`: 대화에서 선택한 핵심 내용을 Obsidian Docs 문서로 만들고
@@ -61,8 +61,8 @@ $start-project 일기 앱을 작성할 거야. iOS 기반이고 Photos와 연동
 
 | 요청 예시 | 수행 범위 |
 | --- | --- |
-| `$cofa-sprint 준비` | 기존 자료를 읽고 폴더 역할과 짧은 spec00 계획 정리 |
-| `$cofa-sprint 명세 spec01` | 해당 기능의 요구사항과 인수 조건 작성 |
+| `$cofa-sprint 준비` | README 기반의 큰 개발 순서·내용을 spec00.md에 정의하고 폴더 역할 정리 |
+| `$cofa-sprint 명세 spec01` | spec00의 해당 단계를 바탕으로 동작·데이터·계약·인수 조건을 상세히 작성 |
 | `$cofa-sprint 개발 spec01` | 확정된 명세 구현과 실제 검증 |
 | `$cofa-sprint 점검` | 실행 근거와 사용자가 직접 확인할 핵심 항목 정리 |
 

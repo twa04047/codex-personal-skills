@@ -1,18 +1,18 @@
 ---
 name: cofa-sprint
-description: 3시간 AI 활용 과제에서 필수 결과 중심의 짧은 spec을 만들고, 의존성에 맞게 구현·검증·설명한다. 과제 준비, spec 명세 작성, 확정 spec 개발과 검증 루프, 핵심 사용자 점검을 요청할 때 사용한다. 일반 문서 작성이나 기존 앱의 무관한 수정에는 적용하지 않는다.
+description: 3시간 AI 활용 과제에서 README 기반 개발 지도와 상세 spec을 만들고, 의존성에 맞게 구현·검증·설명한다. 과제 준비, spec 명세 작성, 확정 spec 개발과 검증 루프, 핵심 사용자 점검을 요청할 때 사용한다. 일반 문서 작성이나 기존 앱의 무관한 수정에는 적용하지 않는다.
 ---
 
 # COFA Sprint
 
-목표는 사용자가 핵심 문제를 푸는 동안 AI가 필요한 서비스 기능을 짧은 명세로 구현하고, 실제 근거로 완료를 확인하는 것이다. 긴 문서나 많은 기능 자체를 성과로 삼지 않는다.
+목표는 사용자가 핵심 문제를 푸는 동안 AI가 필요한 서비스 기능을 구현하고, 실제 근거로 완료를 확인하는 것이다. `spec00.md`는 README 기반의 큰 개발 순서와 내용을 정의해 사용자와 AI가 전체 흐름을 파악하는 지도다. `spec01.md`부터는 이 지도를 바탕으로 구현에 필요한 상세 명세를 작성하며 분량 제한을 두지 않는다.
 
 ## 요청 구분
 
 | 요청 | 수행 | 읽을 자료 |
 | --- | --- | --- |
-| `준비`, 폴더·AGENTS·전체 순서 | 기존 자료 파악, 폴더 역할, 짧은 spec00 계획 | [planning.md](references/planning.md), [formats.md](references/formats.md) |
-| `명세 spec01`, 스펙 문서만 | 해당 기능의 짧은 명세 작성 | planning.md, formats.md |
+| `준비`, 폴더·AGENTS·전체 순서 | README 기반의 큰 개발 순서·내용을 spec00에 정의, 폴더 역할 정리 | [planning.md](references/planning.md), [formats.md](references/formats.md) |
+| `명세 spec01`, 스펙 문서만 | spec00의 해당 단계를 구현 가능한 상세 명세로 구체화 | planning.md, formats.md |
 | `개발 spec01`, 코드 구현 | 확정 범위 구현과 검증 루프 | [execution.md](references/execution.md) |
 | `점검`, 내가 확인할 것, 설명·인계 | 실제 결과 확인과 핵심 요약 | execution.md, 필요하면 formats.md |
 
